@@ -1,0 +1,16 @@
+<pre class='metadata'>
+Title: DSCP Control API
+Shortname: webrtc-dscp-exp
+Level: 1
+Status: CG-DRAFT
+Group: WICG
+Repository: WICG/webrtc-dscp-exp
+URL: http://example.com/url-this-spec-will-live-at
+Editor: Harald Alvestrand, Google https://google.com, hta@google.com
+Abstract: A short description of your spec, one or two sentences.
+</pre>
+
+Introduction {#intro}
+=====================
+
+See https://github.com/tabatkins/bikeshed to get started.
