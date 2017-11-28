@@ -1177,7 +1177,7 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version fbf1456a756299b3ff6d248d0857ec87f2e68cd7" name="generator">
-  <link href="http://example.com/url-this-spec-will-live-at" rel="canonical">
+  <link href="http://alvestrand.github.io/webrtc-dscp-exp" rel="canonical">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1217,6 +1217,64 @@ figcaption {
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }</style>
+<style>/* style-syntax-highlighting */
+pre.idl.highlight { color: #708090; }
+.highlight:not(.idl) { background: hsl(24, 20%, 95%); }
+code.highlight { padding: .1em; border-radius: .3em; }
+pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em 0; overflow: auto; border-radius: 0; }
+.highlight .c { color: #708090 } /* Comment */
+.highlight .k { color: #990055 } /* Keyword */
+.highlight .l { color: #000000 } /* Literal */
+.highlight .n { color: #0077aa } /* Name */
+.highlight .o { color: #999999 } /* Operator */
+.highlight .p { color: #999999 } /* Punctuation */
+.highlight .cm { color: #708090 } /* Comment.Multiline */
+.highlight .cp { color: #708090 } /* Comment.Preproc */
+.highlight .c1 { color: #708090 } /* Comment.Single */
+.highlight .cs { color: #708090 } /* Comment.Special */
+.highlight .kc { color: #990055 } /* Keyword.Constant */
+.highlight .kd { color: #990055 } /* Keyword.Declaration */
+.highlight .kn { color: #990055 } /* Keyword.Namespace */
+.highlight .kp { color: #990055 } /* Keyword.Pseudo */
+.highlight .kr { color: #990055 } /* Keyword.Reserved */
+.highlight .kt { color: #990055 } /* Keyword.Type */
+.highlight .ld { color: #000000 } /* Literal.Date */
+.highlight .m { color: #000000 } /* Literal.Number */
+.highlight .s { color: #a67f59 } /* Literal.String */
+.highlight .na { color: #0077aa } /* Name.Attribute */
+.highlight .nc { color: #0077aa } /* Name.Class */
+.highlight .no { color: #0077aa } /* Name.Constant */
+.highlight .nd { color: #0077aa } /* Name.Decorator */
+.highlight .ni { color: #0077aa } /* Name.Entity */
+.highlight .ne { color: #0077aa } /* Name.Exception */
+.highlight .nf { color: #0077aa } /* Name.Function */
+.highlight .nl { color: #0077aa } /* Name.Label */
+.highlight .nn { color: #0077aa } /* Name.Namespace */
+.highlight .py { color: #0077aa } /* Name.Property */
+.highlight .nt { color: #669900 } /* Name.Tag */
+.highlight .nv { color: #222222 } /* Name.Variable */
+.highlight .ow { color: #999999 } /* Operator.Word */
+.highlight .mb { color: #000000 } /* Literal.Number.Bin */
+.highlight .mf { color: #000000 } /* Literal.Number.Float */
+.highlight .mh { color: #000000 } /* Literal.Number.Hex */
+.highlight .mi { color: #000000 } /* Literal.Number.Integer */
+.highlight .mo { color: #000000 } /* Literal.Number.Oct */
+.highlight .sb { color: #a67f59 } /* Literal.String.Backtick */
+.highlight .sc { color: #a67f59 } /* Literal.String.Char */
+.highlight .sd { color: #a67f59 } /* Literal.String.Doc */
+.highlight .s2 { color: #a67f59 } /* Literal.String.Double */
+.highlight .se { color: #a67f59 } /* Literal.String.Escape */
+.highlight .sh { color: #a67f59 } /* Literal.String.Heredoc */
+.highlight .si { color: #a67f59 } /* Literal.String.Interpol */
+.highlight .sx { color: #a67f59 } /* Literal.String.Other */
+.highlight .sr { color: #a67f59 } /* Literal.String.Regex */
+.highlight .s1 { color: #a67f59 } /* Literal.String.Single */
+.highlight .ss { color: #a67f59 } /* Literal.String.Symbol */
+.highlight .vc { color: #0077aa } /* Name.Variable.Class */
+.highlight .vg { color: #0077aa } /* Name.Variable.Global */
+.highlight .vi { color: #0077aa } /* Name.Variable.Instance */
+.highlight .il { color: #000000 } /* Literal.Number.Integer.Long */
+</style>
 <style>/* style-selflinks */
 
 .heading, .issue, .note, .example, li, dt {
@@ -1333,7 +1391,7 @@ pre .property::before, pre .property::after {
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="http://example.com/url-this-spec-will-live-at">http://example.com/url-this-spec-will-live-at</a>
+     <dd><a class="u-url" href="http://alvestrand.github.io/webrtc-dscp-exp">http://alvestrand.github.io/webrtc-dscp-exp</a>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/WICG/webrtc-dscp-exp/issues/">GitHub</a>
      <dt class="editor">Editor:
@@ -1347,7 +1405,9 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>A short description of your spec, one or two sentences.</p>
+   <p>This API defines a control surface for manipulating the network
+
+control bits (DSCP bits) of outgoing WebRTC packets.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
@@ -1365,17 +1425,43 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
+    <li>
+     <a href="#idl"><span class="secno">2</span> <span class="content">IDL specification</span></a>
+     <ol class="toc">
+      <li><a href="#networkPriority"><span class="secno">2.1</span> <span class="content">networkPriority definition</span></a>
+     </ol>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
+     </ol>
     <li>
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
      </ol>
+    <li><a href="#idl-index"><span class="secno"></span> <span class="content">IDL Index</span></a>
    </ol>
   </nav>
   <main>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
-   <p>See https://github.com/tabatkins/bikeshed to get started.</p>
+   <p>The <a data-link-type="biblio" href="#biblio-webrtc">[WEBRTC]</a> spec defines a "priority" field as part of its
+RTCRtpEncodingParameters structure, with the possible values "very-low",
+"low", "medium" and "high".</p>
+   <p>This specification adds a field to <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webrtc-pc/#dom-rtcrptencodingparameters" id="ref-for-dom-rtcrptencodingparameters">RTCRtpEncodingParameters</a></code> that allows
+control over the DSCP markings without affecting local prioritization.</p>
+   <h2 class="heading settled" data-level="2" id="idl"><span class="secno">2. </span><span class="content">IDL specification</span><a class="self-link" href="#idl"></a></h2>
+<pre class="idl highlight def"><span class="kt">dictionary</span> <dfn class="nv idl-code" data-dfn-type="dictionary" data-export="" id="dictdef-rtcrtpencodingparametersexp"><code>RTCRtpEncodingParametersExp</code><a class="self-link" href="#dictdef-rtcrtpencodingparametersexp"></a></dfn> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/webrtc-pc/#dom-rtcrptencodingparameters" id="ref-for-dom-rtcrptencodingparameters①">RTCRtpEncodingParameters</a> {
+    <a class="n" data-link-type="idl-name" href="https://w3c.github.io/webrtc-pc/#dom-rtcprioritytype" id="ref-for-dom-rtcprioritytype">RTCPriorityType</a> <dfn class="nv idl-code" data-default="&quot;low&quot;" data-dfn-for="RTCRtpEncodingParametersExp" data-dfn-type="dict-member" data-export="" data-type="RTCPriorityType " id="dom-rtcrtpencodingparametersexp-networkpriority"><code>networkPriority</code><a class="self-link" href="#dom-rtcrtpencodingparametersexp-networkpriority"></a></dfn> = "low";
+};
+</pre>
+   <h3 class="heading settled" data-level="2.1" id="networkPriority"><span class="secno">2.1. </span><span class="content">networkPriority definition</span><a class="self-link" href="#networkPriority"></a></h3>
+   <p><dfn data-dfn-for="RTCRtpEncodingParameters" data-dfn-type="dfn" data-noexport="" id="rtcrtpencodingparameters-networkpriority">networkPriority<a class="self-link" href="#rtcrtpencodingparameters-networkpriority"></a></dfn> has the same
+effect as <code class="idl"><a data-link-type="idl" href="https://drafts.csswg.org/cssom-1/#dom-cssstyledeclaration-setproperty-property-value-priority-priority" id="ref-for-dom-cssstyledeclaration-setproperty-property-value-priority-priority">priority</a></code>, except that it only affects the DSCP markings of
+the generated packets, as described in <a data-link-type="biblio" href="#biblio-rtcweb-transport">[RTCWEB-TRANSPORT]</a> section 4.2.</p>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -1523,9 +1609,49 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
 
 })();
 </script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li>
+    networkPriority
+    <ul>
+     <li><a href="#dom-rtcrtpencodingparametersexp-networkpriority">dict-member for RTCRtpEncodingParametersExp</a><span>, in §2</span>
+     <li><a href="#rtcrtpencodingparameters-networkpriority">dfn for RTCRtpEncodingParameters</a><span>, in §2.1</span>
+    </ul>
+   <li><a href="#dictdef-rtcrtpencodingparametersexp">RTCRtpEncodingParametersExp</a><span>, in §2</span>
+  </ul>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[cssom-1]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/cssom-1/#dom-cssstyledeclaration-setproperty-property-value-priority-priority">priority</a>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[webrtc-pc]</a> defines the following terms:
+    <ul>
+     <li><a href="https://w3c.github.io/webrtc-pc/#dom-rtcprioritytype">RTCPriorityType</a>
+     <li><a href="https://w3c.github.io/webrtc-pc/#dom-rtcrptencodingparameters">RTCRtpEncodingParameters</a>
+    </ul>
+  </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
+   <dt id="biblio-cssom-1">[CSSOM-1]
+   <dd>Simon Pieters; Glenn Adams. <a href="https://www.w3.org/TR/cssom-1/">CSS Object Model (CSSOM)</a>. 17 March 2016. WD. URL: <a href="https://www.w3.org/TR/cssom-1/">https://www.w3.org/TR/cssom-1/</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
   </dl>
+  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <dl>
+   <dt id="biblio-rtcweb-transport">[RTCWEB-TRANSPORT]
+   <dd>H. Alvestrand. <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-transports">Transports for RTCWEB</a>. 31 October 2016. Active Internet-Draft. URL: <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-transports">https://tools.ietf.org/html/draft-ietf-rtcweb-transports</a>
+   <dt id="biblio-webrtc">[WEBRTC]
+   <dd>Adam Bergkvist; et al. <a href="https://www.w3.org/TR/webrtc/">WebRTC 1.0: Real-time Communication Between Browsers</a>. 2 November 2017. CR. URL: <a href="https://www.w3.org/TR/webrtc/">https://www.w3.org/TR/webrtc/</a>
+  </dl>
+  <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
+<pre class="idl highlight def"><span class="kt">dictionary</span> <a class="nv" href="#dictdef-rtcrtpencodingparametersexp"><code>RTCRtpEncodingParametersExp</code></a> : <a class="n" data-link-type="idl-name" href="https://w3c.github.io/webrtc-pc/#dom-rtcrptencodingparameters" id="ref-for-dom-rtcrptencodingparameters①①">RTCRtpEncodingParameters</a> {
+    <a class="n" data-link-type="idl-name" href="https://w3c.github.io/webrtc-pc/#dom-rtcprioritytype" id="ref-for-dom-rtcprioritytype①">RTCPriorityType</a> <a class="nv" data-default="&quot;low&quot;" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparametersexp-networkpriority"><code>networkPriority</code></a> = "low";
+};
+
+</pre>

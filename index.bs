@@ -5,12 +5,42 @@ Level: 1
 Status: CG-DRAFT
 Group: WICG
 Repository: WICG/webrtc-dscp-exp
-URL: http://example.com/url-this-spec-will-live-at
+URL: http://alvestrand.github.io/webrtc-dscp-exp
 Editor: Harald Alvestrand, Google https://google.com, hta@google.com
-Abstract: A short description of your spec, one or two sentences.
+Abstract: This API defines a control surface for manipulating the network
+Abstract: control bits (DSCP bits) of outgoing WebRTC packets.
+</pre>
+
+<pre class='anchors'>
+spec: webrtc-pc; urlPrefix: https://w3c.github.io/webrtc-pc/
+    type: interface
+        for: RTCRtpEncodingParameters; text: RTCRtpEncodingParameters; url: #dom-rtcrptencodingparameters
+    type: enum
+        text: RTCPriorityType; url: #dom-rtcprioritytype
 </pre>
 
 Introduction {#intro}
-=====================
+======
 
-See https://github.com/tabatkins/bikeshed to get started.
+The [[WEBRTC]] spec defines a "priority" field as part of its
+RTCRtpEncodingParameters structure, with the possible values "very-low",
+"low", "medium" and "high".
+
+This specification adds a field to {{RTCRtpEncodingParameters}} that allows
+control over the DSCP markings without affecting local prioritization.
+
+IDL specification {#idl}
+====
+
+<pre class='idl'>
+dictionary RTCRtpEncodingParametersExp : RTCRtpEncodingParameters {
+    RTCPriorityType networkPriority = "low";
+};
+</pre>
+
+networkPriority definition {#networkPriority}
+----
+
+<dfn for='RTCRtpEncodingParameters'>networkPriority</dfn> has the same
+effect as {{priority}}, except that it only affects the DSCP markings of
+the generated packets, as described in [[RTCWEB-TRANSPORT]] section 4.2.
