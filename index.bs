@@ -17,12 +17,14 @@ spec: webrtc-pc; urlPrefix: https://w3c.github.io/webrtc-pc/
         for: RTCRtpEncodingParameters; text: RTCRtpEncodingParameters; url: #dom-rtcrptencodingparameters
     type: enum
         text: RTCPriorityType; url: #dom-rtcprioritytype
+    type: dfn
+        for: RTCRtpEncodingParameters; text: priority; url: #dom-rtcrtpencodingparameters-priority
 </pre>
 
 Introduction {#intro}
 ======
 
-The [[WEBRTC]] spec defines a "priority" field as part of its
+The [[!WEBRTC]] spec defines a "{{priority}}" field as part of its
 RTCRtpEncodingParameters structure, with the possible values "very-low",
 "low", "medium" and "high".
 
@@ -44,3 +46,6 @@ networkPriority definition {#networkPriority}
 <dfn for='RTCRtpEncodingParameters'>networkPriority</dfn> has the same
 effect as {{priority}}, except that it only affects the DSCP markings of
 the generated packets, as described in [[RTCWEB-TRANSPORT]] section 4.2.
+
+If {{networkPriority}} is unset, the DSCP markings of the generated
+packets are controlled by the {{priority}} member.
