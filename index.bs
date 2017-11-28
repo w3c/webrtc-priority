@@ -33,7 +33,7 @@ IDL specification {#idl}
 ====
 
 <pre class='idl'>
-dictionary RTCRtpEncodingParametersExp : RTCRtpEncodingParameters {
+partial dictionary RTCRtpEncodingParameters {
     RTCPriorityType networkPriority = "low";
 };
 </pre>
