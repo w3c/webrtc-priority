@@ -1,5 +1,5 @@
 <pre class='metadata'>
-Title: DSCP Control API
+Title: WebRTC DSCP Control API
 Shortname: webrtc-dscp-exp
 Level: 1
 Status: CG-DRAFT
