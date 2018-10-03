@@ -1,13 +1,12 @@
 <pre class='metadata'>
-Title: DSCP Control API
-Shortname: webrtc-dscp
-Level: none
+Title: WebRTC DSCP Control API
+Shortname: webrtc-dscp-exp
+Level: 1
 Status: ED
-ED: https://w3c.github.io/webrtc-dscp-exp/
-TR: https://www.w3.org/TR/webrtc-dscp/
 Group: webrtc
-Repository: webrtc-dscp-exp
-Editor: Harald Alvestrand, w3cid 24610, Google Inc., hta@google.com
+Repository: w3c/webrtc-dscp-exp
+URL: http://w3c.github.io/webrtc-dscp-exp/
+Editor: Harald Alvestrand, Google https://google.com, hta@google.com
 Abstract: This API defines a control surface for manipulating the network
 Abstract: control bits (DSCP bits) of outgoing WebRTC packets.
 Markup Shorthands: css no
