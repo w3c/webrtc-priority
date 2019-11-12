@@ -16,8 +16,15 @@ Markup Shorthands: css no
 
 <pre class='anchors'>
 spec: WEBRTC; urlPrefix: https://w3c.github.io/webrtc-pc/
-    type: interface
+    type: dfn
         for: RTCRtpEncodingParameters; text: RTCRtpEncodingParameters; url: #dom-rtcrtpencodingparameters
+    type: idl
+        for: RTCRtpEncodingParameters; text: RTCRtpEncodingParameters, url: #dom-rtcrtpencodingparameters
+    type: dictionary
+        for: RTCRtpEncodingParameters; text: RTCRtpEncodingParameters, url: #dom-rtcrtpencodingparameters
+    type: dfn
+        for: RTCRtpSender; text: RTCRtpSender, url: #dom-rtcrtpsender
+    
 </pre>
 
 # Introduction {#intro}
@@ -135,37 +142,8 @@ If {{networkPriority}} is unset, the DSCP markings of the generated
 packets are controlled by the {{priority}} member.
 
 
-## Processing steps {#processing-steps}
 
-In the processing steps for initializing a DataChannel, insert the following
-step into processing the <var>option</var> argument:
-
-                <li>
-                  <p>Initialize <var>channel</var>.<a>[[\DataChannelPriority]]</a> to <var>option</var>'s
-                  <code>priority</code> member.</p>
-                </li>
-
-
-            <dt data-tests="RTCPeerConnection-createDataChannel.html"><code>priority</code> of type <span class=
-            "idlMemberType"><a>RTCPriorityType</a></span>, defaulting to
-            <code>low</code></dt>
-            <dd>
-              <p>Priority of this channel.</p>
-            </dd>
-
-
-            <dt data-tests="RTCPeerConnection-createDataChannel.html"><code>priority</code> of type <span class=
-            "idlAttrType"><a>RTCPriorityType</a></span>, readonly</dt>
-            <dd>
-              <p>The <code>priority</code> attribute returns the priority for
-              this <code><a>RTCDataChannel</a></code>. The priority is assigned
-              by the user agent at channel creation time. On getting, the
-              attribute MUST return the value of the
-              <a>[[\DataChannelPriority]]</a> slot.</p>
-            </dd>
-
-
-# Extension for DataChannel {#datachannel}
+# Extension for RTCDataChannel {#datachannel}
 
 <pre class='idl'>
 partial interface RTCRtpDataChannelParameters {
@@ -177,11 +155,46 @@ partial dictionary RTCRtpDataChannelInit {
 };
 
 </pre>
+## New DataChannel members
+<dl>
+
+
+            <dt data-tests="RTCPeerConnection-createDataChannel.html"><code>priority</code> of type <span class=
+            "idlAttrType"><a>RTCPriorityType</a></span>, readonly</dt>
+            <dd>
+              <p>The <code>priority</code> attribute returns the priority for
+              this <code><a>RTCDataChannel</a></code>. The priority is assigned
+              by the user agent at channel creation time. On getting, the
+              attribute MUST return the value of the
+              <a>[[\DataChannelPriority]]</a> slot.</p>
+            </dd>
+</dl>
+## New DataChannelInit members
+<dl>
+            <dt data-tests="RTCPeerConnection-createDataChannel.html"><code>priority</code> of type <span class=
+            "idlMemberType"><a>RTCPriorityType</a></span>, defaulting to
+            <code>low</code></dt>
+            <dd>
+              <p>Priority of this channel.</p>
+            </dd>
+</dl>
+
+## RTCDataChannel processing steps
+
 The following steps are added to the initialization steps for DataChannel:
 
 Let DataChannel have an internal slot <a>[[\DataChannelPriority]]</a>.
 
-<p>Initialize <var>channel</var>.<a>[[\DataChannelPriority]]</a> based on the integer priority value in
+In the processing steps for initializing a DataChannel, insert the following
+step into processing the <var>option</var> argument:
+<ul>
+                <li>
+                  <p>Initialize <var>channel</var>.<a>[[\DataChannelPriority]]</a> to <var>option</var>'s
+                  <code>priority</code> member.</p>
+                </li>
+</ul>
+
+<p>For an incoming DataChannel, initialize <var>channel</var>.<a>[[\DataChannelPriority]]</a> based on the integer priority value in
           <var>configuration</var>, according to the following mapping:
           </p>
           <table class="simple">
@@ -207,6 +220,10 @@ Let DataChannel have an internal slot <a>[[\DataChannelPriority]]</a>.
             </tr>
           </table>
         </li>
+
+
+## Processing steps {#processing-steps}
+
 
 
 
