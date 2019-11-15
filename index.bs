@@ -27,7 +27,8 @@ spec: WEBRTC; urlPrefix: https://w3c.github.io/webrtc-pc/
     
 </pre>
 
-# Introduction {#intro}
+
+# Introduction # {#intro}
 
 The [[!WEBRTC]] spec defined a "{{priority}}" field as part of its
 RTCRtpEncodingParameters structure, with the possible values "very-low",
@@ -40,7 +41,7 @@ In addition, this specification adds fields to {{RTCRtpEncodingParameters}}
 that allow control over the DSCP markings without affecting local
 prioritization, and vice versa.
 
-# Priority and QoS Model {#model}
+# Priority and QoS Model # {#model}
 
 Many applications have multiple media flows of the same data type and
 often some of the flows are more important than others. WebRTC uses the
@@ -55,7 +56,7 @@ medium, low or of very low importance to the application by setting the
 <code><a>RTCRtpEncodingParameters</a></code> objects to one of the
 values defined below.
 
-## RTCPriorityType Enum {#rtc-priority-type}
+## RTCPriorityType Enum ## {#rtc-priority-type}
 <pre class="idl">
 enum RTCPriorityType {
   "very-low",
@@ -100,7 +101,7 @@ enum RTCPriorityType {
       that are.</p>
     </section>
 
-## Extension to EncodingParameters {#encoding-parameters}
+## Extension to EncodingParameters ## {#encoding-parameters}
 
 <pre class='idl'>
 partial dictionary RTCRtpEncodingParameters {
@@ -143,7 +144,7 @@ packets are controlled by the {{priority}} member.
 
 
 
-# Extension for RTCDataChannel {#datachannel}
+# Extension for RTCDataChannel # {#datachannel}
 
 <pre class='idl'>
 partial interface RTCRtpDataChannelParameters {
@@ -222,7 +223,7 @@ step into processing the <var>option</var> argument:
         </li>
 
 
-## Processing steps {#processing-steps}
+## Processing steps ## {#processing-steps}
 
 
 
