@@ -25,11 +25,12 @@ spec: WEBRTC; urlPrefix: https://w3c.github.io/webrtc-pc/
 
 # Introduction # {#intro}
 
-The [[!WEBRTC]] spec defined a "priority" field as part of its
-RTCRtpEncodingParameters structure, with the possible values "very-low",
+This document defines a "priority" field as part of the WEBRTC
+{{RTCRtpEncodingParameters}} structure, with the possible values "very-low",
 "low", "medium" and "high".
 
-This feature was removed in November 2019 due to lack of implementation
+This feature was originally part of the [[!WEBRTC]] specification, but was
+removed in November 2019 due to lack of implementation
 experience. It is now part of this document.
 
 In addition, this specification adds fields to {{RTCRtpEncodingParameters}}
@@ -175,18 +176,18 @@ partial dictionary RTCDataChannelInit {
 
 The following steps are added to the initialization steps for DataChannel:
 
-Let DataChannel have an internal slot <dfn>[[\DataChannelPriority]]</dfn>.
+Let DataChannel have an internal slot <dfn>\[[DataChannelPriority]]</dfn>.
 
 In the processing steps for initializing a DataChannel, insert the following
 step into processing the <var>option</var> argument:
 <ul>
                 <li>
-                  <p>Initialize <var>channel</var>.<a>[[\DataChannelPriority]]</a> to <var>option</var>'s
+                  <p>Initialize <var>channel</var>.<a>\[[DataChannelPriority]]</a> to <var>option</var>'s
                   <code>priority</code> member.</p>
                 </li>
 </ul>
 
-<p>For an incoming DataChannel, initialize <var>channel</var>.<a>[[\DataChannelPriority]]</a> based on the integer priority value in
+<p>For an incoming DataChannel, initialize <var>channel</var>.<a>\[[DataChannelPriority]]</a> based on the integer priority value in
           <var>configuration</var>, according to the following mapping:
           </p>
           <table class="simple">
@@ -213,8 +214,6 @@ step into processing the <var>option</var> argument:
           </table>
         </li>
 
-
-## Processing steps ## {#processing-steps}
 
 
 
