@@ -14,15 +14,6 @@ Markup Shorthands: css no
 </pre>
 </pre>
 
-<pre class='anchors'>
-spec: WEBRTC; urlPrefix: https://w3c.github.io/webrtc-pc/
-    type: dictionary; text: RTCRtpEncodingParameters; url: #dom-rtcrtpencodingparameters
-    type: interface; text: RTCRtpSender; url: #dom-rtcrtpsender
-    type: interface; text: RTCDataChannel; url: #dom-rtcdatachannel
-    type: dictionary; text: RTCDataChannelInit; url: #dom-rtcdatachannelinit
-</pre>
-
-
 # Introduction # {#intro}
 
 This document defines a "priority" field as part of the WEBRTC
