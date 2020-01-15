@@ -98,7 +98,7 @@ partial dictionary RTCRtpEncodingParameters {
 </pre>
 
 <dl>
-  <dt><dfn dict-member for=RTCRtpEncodingParameters><code>priority</code></dfn> of type {{RTCPriorityType]], defaulting to
+  <dt><dfn dict-member for=RTCRtpEncodingParameters><code>priority</code></dfn> of type {{RTCPriorityType}}, defaulting to
     <code>"low"</code></dt>
   <dd>
     <p>
@@ -148,7 +148,7 @@ partial dictionary RTCDataChannelInit {
       this {{RTCDataChannel}}. The priority is assigned
       by the user agent at channel creation time. On getting, the
       attribute MUST return the value of the
-      [[\DataChannelPriority]] slot.</p>
+      \[[DataChannelPriority]] slot.</p>
   </dd>
 </dl>
 ## New RTCDataChannelInit member
