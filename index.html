@@ -1228,7 +1228,7 @@ Possible extra rowspan handling
       background-attachment: fixed;
     }
   </style>
-  <meta content="Bikeshed version 1c30f364edf130f99c9528d3fcb3db571f91958f" name="generator">
+  <meta content="Bikeshed version 2a881f0ee698433d75c6a1555514334adb37d8c7" name="generator">
   <link href="http://w3c.github.io/webrtc-dscp-exp/" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1476,7 +1476,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">WebRTC DSCP Control API</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2020-01-15">15 January 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2020-01-16">16 January 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1611,12 +1611,11 @@ that are.</p>
    <h3 class="heading settled" data-level="3.2" id="encoding-parameters"><span class="secno">3.2. </span><span class="content">Extension to RTCRtpEncodingParameters</span><a class="self-link" href="#encoding-parameters"></a></h3>
 <pre class="idl highlight def"><c- b>partial</c-> <c- b>dictionary</c-> <a class="idl-code" data-link-type="dictionary" href="https://www.w3.org/TR/webrtc/#dom-rtcrtpencodingparameters" id="ref-for-dom-rtcrtpencodingparameters③"><c- g>RTCRtpEncodingParameters</c-></a> {
   <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority"><c- g>priority</c-></a>;
-  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-localpriority" id="ref-for-dom-rtcrtpencodingparameters-localpriority"><c- g>localPriority</c-></a>;
-  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype②"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-networkpriority" id="ref-for-dom-rtcrtpencodingparameters-networkpriority"><c- g>networkPriority</c-></a>;
+  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-networkpriority" id="ref-for-dom-rtcrtpencodingparameters-networkpriority"><c- g>networkPriority</c-></a>;
 };
 </pre>
    <dl>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="RTCRtpEncodingParameters" data-dfn-type="dict-member" data-export id="dom-rtcrtpencodingparameters-priority"><code>priority</code></dfn> of type , <span> of type <a data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype③">RTCPriorityType</a></span><code class="idl"><a data-link-type="idl" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype④">RTCPriorityType</a></code>, defaulting to <code>"low"</code>
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="RTCRtpEncodingParameters" data-dfn-type="dict-member" data-export id="dom-rtcrtpencodingparameters-priority"><code>priority</code></dfn> of type , <span> of type <a data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype②">RTCPriorityType</a></span><code class="idl"><a data-link-type="idl" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype③">RTCPriorityType</a></code>, defaulting to <code>"low"</code>
     <dd>
      <p> Indicates the priority of an <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/webrtc/#dom-rtcrtpsender" id="ref-for-dom-rtcrtpsender">RTCRtpSender</a></code>, which influences the
       bandwidth allocation among <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/webrtc/#dom-rtcrtpsender" id="ref-for-dom-rtcrtpsender①">RTCRtpSender</a></code> objects. It is specified
@@ -1624,30 +1623,25 @@ that are.</p>
       between the encodings of an <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/webrtc/#dom-rtcrtpsender" id="ref-for-dom-rtcrtpsender②">RTCRtpSender</a></code>. </p>
    </dl>
    <div data-link-for-hint="RTCRtpEncodingParameters">
-     <dfn class="dfn-paneled idl-code" data-dfn-for="RTCRtpEncodingParameters" data-dfn-type="dict-member" data-export id="dom-rtcrtpencodingparameters-localpriority"><code>localPriority</code></dfn> has the same
-effect as <code class="idl"><a data-link-type="idl" href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority①">priority</a></code>, except that it only affects the bandwidth allocation
-decisions for the generated packets, as described in <a data-link-type="biblio" href="#biblio-rtcweb-transport">[RTCWEB-TRANSPORT]</a> section 4.1. 
-    <p>If <code class="idl"><a data-link-type="idl" href="#dom-rtcrtpencodingparameters-localpriority" id="ref-for-dom-rtcrtpencodingparameters-localpriority①">localPriority</a></code> is unset, the DSCP markings of the generated
-packets are controlled by the <code class="idl"><a data-link-type="idl" href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority②">priority</a></code> member.</p>
-    <p><dfn class="dfn-paneled idl-code" data-dfn-for="RTCRtpEncodingParameters" data-dfn-type="dict-member" data-export id="dom-rtcrtpencodingparameters-networkpriority"><code>networkPriority</code></dfn> has the same
-effect as <code class="idl"><a data-link-type="idl" href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority③">priority</a></code>, except that it only affects the DSCP markings of
-the generated packets, as described in <a data-link-type="biblio" href="#biblio-rtcweb-transport">[RTCWEB-TRANSPORT]</a> section 4.2.</p>
+     <dfn class="dfn-paneled idl-code" data-dfn-for="RTCRtpEncodingParameters" data-dfn-type="dict-member" data-export id="dom-rtcrtpencodingparameters-networkpriority"><code>networkPriority</code></dfn> has the same
+effect as <code class="idl"><a data-link-type="idl" href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority①">priority</a></code>, except that it only affects the DSCP markings of
+the generated packets, as described in <a data-link-type="biblio" href="#biblio-rtcweb-transport">[RTCWEB-TRANSPORT]</a> section 4.2. 
     <p>If <code class="idl"><a data-link-type="idl" href="#dom-rtcrtpencodingparameters-networkpriority" id="ref-for-dom-rtcrtpencodingparameters-networkpriority①">networkPriority</a></code> is unset, the DSCP markings of the generated
-packets are controlled by the <code class="idl"><a data-link-type="idl" href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority④">priority</a></code> member.</p>
+packets are controlled by the <code class="idl"><a data-link-type="idl" href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority②">priority</a></code> member.</p>
    </div>
    <h2 class="heading settled" data-level="4" id="datachannel"><span class="secno">4. </span><span class="content">Extensions for RTCDataChannel</span><a class="self-link" href="#datachannel"></a></h2>
 <pre class="idl highlight def"><c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="https://www.w3.org/TR/webrtc/#dom-rtcdatachannel" id="ref-for-dom-rtcdatachannel"><c- g>RTCDataChannel</c-></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑤"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="RTCPriorityType" href="#dom-rtcdatachannel-priority" id="ref-for-dom-rtcdatachannel-priority"><c- g>priority</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype④"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="RTCPriorityType" href="#dom-rtcdatachannel-priority" id="ref-for-dom-rtcdatachannel-priority"><c- g>priority</c-></a>;
 };
 
 <c- b>partial</c-> <c- b>dictionary</c-> <a class="idl-code" data-link-type="dictionary" href="https://www.w3.org/TR/webrtc/#dom-rtcdatachannelinit" id="ref-for-dom-rtcdatachannelinit"><c- g>RTCDataChannelInit</c-></a> {
-  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑥"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcdatachannelinit-priority" id="ref-for-dom-rtcdatachannelinit-priority"><c- g>priority</c-></a>;
+  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑤"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcdatachannelinit-priority" id="ref-for-dom-rtcdatachannelinit-priority"><c- g>priority</c-></a>;
 };
 
 </pre>
    <h3 class="heading settled" data-level="4.1" id="new-rtcdatachannel-attribute"><span class="secno">4.1. </span><span class="content">New RTCDataChannel attribute</span><a class="self-link" href="#new-rtcdatachannel-attribute"></a></h3>
    <dl>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="RTCDataChannel" data-dfn-type="attribute" data-export id="dom-rtcdatachannel-priority"><code>priority</code></dfn> of type , <span> of type <a data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑦">RTCPriorityType</a>, readonly</span><code class="idl"><a data-link-type="idl" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑧">RTCPriorityType</a></code>, readonly
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="RTCDataChannel" data-dfn-type="attribute" data-export id="dom-rtcdatachannel-priority"><code>priority</code></dfn> of type , <span> of type <a data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑥">RTCPriorityType</a>, readonly</span><code class="idl"><a data-link-type="idl" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑦">RTCPriorityType</a></code>, readonly
     <dd>
      <p>The <code>priority</code> attribute returns the priority for
       this <code class="idl"><a data-link-type="idl" href="https://www.w3.org/TR/webrtc/#dom-rtcdatachannel" id="ref-for-dom-rtcdatachannel①">RTCDataChannel</a></code>. The priority is assigned
@@ -1657,7 +1651,7 @@ packets are controlled by the <code class="idl"><a data-link-type="idl" href="#d
    </dl>
    <h3 class="heading settled" data-level="4.2" id="new-rtcdatachannelinit-member"><span class="secno">4.2. </span><span class="content">New RTCDataChannelInit member</span><a class="self-link" href="#new-rtcdatachannelinit-member"></a></h3>
    <dl>
-    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="RTCDataChannelInit" data-dfn-type="dict-member" data-export id="dom-rtcdatachannelinit-priority"><code>priority</code></dfn> of type , <span> of type <a data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑨">RTCPriorityType</a></span><code class="idl"><a data-link-type="idl" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①⓪">RTCPriorityType</a></code>, defaulting to <code>low</code>
+    <dt><dfn class="dfn-paneled idl-code" data-dfn-for="RTCDataChannelInit" data-dfn-type="dict-member" data-export id="dom-rtcdatachannelinit-priority"><code>priority</code></dfn> of type , <span> of type <a data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑧">RTCPriorityType</a></span><code class="idl"><a data-link-type="idl" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑨">RTCPriorityType</a></code>, defaulting to <code>low</code>
     <dd>
      <p>Priority of this channel.</p>
    </dl>
@@ -1676,7 +1670,7 @@ step into processing the <var>option</var> argument:</p>
     <tbody>
      <tr>
       <th><var>configuration</var> priority value
-      <th><code class="idl"><a data-link-type="idl" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①①">RTCPriorityType</a></code> value
+      <th><code class="idl"><a data-link-type="idl" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①⓪">RTCPriorityType</a></code> value
      <tr>
       <td>0 to 128
       <td><code>very-low</code>
@@ -1843,7 +1837,6 @@ step into processing the <var>option</var> argument:</p>
    <li><a href="#datachannelpriority">[[DataChannelPriority]]</a><span>, in §4.3</span>
    <li><a href="#dom-rtcprioritytype-high">"high"</a><span>, in §3.1</span>
    <li><a href="#dom-rtcprioritytype-high">high</a><span>, in §3.1</span>
-   <li><a href="#dom-rtcrtpencodingparameters-localpriority">localPriority</a><span>, in §3.2</span>
    <li><a href="#dom-rtcprioritytype-low">"low"</a><span>, in §3.1</span>
    <li><a href="#dom-rtcprioritytype-low">low</a><span>, in §3.1</span>
    <li><a href="#dom-rtcprioritytype-medium">medium</a><span>, in §3.1</span>
@@ -1921,17 +1914,16 @@ step into processing the <var>option</var> argument:</p>
 };
 
 <c- b>partial</c-> <c- b>dictionary</c-> <a class="idl-code" data-link-type="dictionary" href="https://www.w3.org/TR/webrtc/#dom-rtcrtpencodingparameters" id="ref-for-dom-rtcrtpencodingparameters③①"><c- g>RTCRtpEncodingParameters</c-></a> {
-  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①③"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority⑤"><c- g>priority</c-></a>;
-  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①②"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-localpriority" id="ref-for-dom-rtcrtpencodingparameters-localpriority②"><c- g>localPriority</c-></a>;
-  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype②①"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-networkpriority" id="ref-for-dom-rtcrtpencodingparameters-networkpriority②"><c- g>networkPriority</c-></a>;
+  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①②"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-priority" id="ref-for-dom-rtcrtpencodingparameters-priority③"><c- g>priority</c-></a>;
+  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype①①"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcrtpencodingparameters-networkpriority" id="ref-for-dom-rtcrtpencodingparameters-networkpriority②"><c- g>networkPriority</c-></a>;
 };
 
 <c- b>partial</c-> <c- b>interface</c-> <a class="idl-code" data-link-type="interface" href="https://www.w3.org/TR/webrtc/#dom-rtcdatachannel" id="ref-for-dom-rtcdatachannel②"><c- g>RTCDataChannel</c-></a> {
-  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑤①"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="RTCPriorityType" href="#dom-rtcdatachannel-priority" id="ref-for-dom-rtcdatachannel-priority①"><c- g>priority</c-></a>;
+  <c- b>readonly</c-> <c- b>attribute</c-> <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype④①"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="attribute" data-readonly data-type="RTCPriorityType" href="#dom-rtcdatachannel-priority" id="ref-for-dom-rtcdatachannel-priority①"><c- g>priority</c-></a>;
 };
 
 <c- b>partial</c-> <c- b>dictionary</c-> <a class="idl-code" data-link-type="dictionary" href="https://www.w3.org/TR/webrtc/#dom-rtcdatachannelinit" id="ref-for-dom-rtcdatachannelinit①"><c- g>RTCDataChannelInit</c-></a> {
-  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑥①"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcdatachannelinit-priority" id="ref-for-dom-rtcdatachannelinit-priority①"><c- g>priority</c-></a>;
+  <a class="n" data-link-type="idl-name" href="#enumdef-rtcprioritytype" id="ref-for-enumdef-rtcprioritytype⑤①"><c- n>RTCPriorityType</c-></a> <a class="idl-code" data-link-type="dict-member" data-type="RTCPriorityType " href="#dom-rtcdatachannelinit-priority" id="ref-for-dom-rtcdatachannelinit-priority①"><c- g>priority</c-></a>;
 };
 
 
@@ -1939,11 +1931,11 @@ step into processing the <var>option</var> argument:</p>
   <aside class="dfn-panel" data-for="enumdef-rtcprioritytype">
    <b><a href="#enumdef-rtcprioritytype">#enumdef-rtcprioritytype</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-enumdef-rtcprioritytype">3.2. Extension to RTCRtpEncodingParameters</a> <a href="#ref-for-enumdef-rtcprioritytype①">(2)</a> <a href="#ref-for-enumdef-rtcprioritytype②">(3)</a> <a href="#ref-for-enumdef-rtcprioritytype③">(4)</a> <a href="#ref-for-enumdef-rtcprioritytype④">(5)</a>
-    <li><a href="#ref-for-enumdef-rtcprioritytype⑤">4. Extensions for RTCDataChannel</a> <a href="#ref-for-enumdef-rtcprioritytype⑥">(2)</a>
-    <li><a href="#ref-for-enumdef-rtcprioritytype⑦">4.1. New RTCDataChannel attribute</a> <a href="#ref-for-enumdef-rtcprioritytype⑧">(2)</a>
-    <li><a href="#ref-for-enumdef-rtcprioritytype⑨">4.2. New RTCDataChannelInit member</a> <a href="#ref-for-enumdef-rtcprioritytype①⓪">(2)</a>
-    <li><a href="#ref-for-enumdef-rtcprioritytype①①">4.3. RTCDataChannel processing steps</a>
+    <li><a href="#ref-for-enumdef-rtcprioritytype">3.2. Extension to RTCRtpEncodingParameters</a> <a href="#ref-for-enumdef-rtcprioritytype①">(2)</a> <a href="#ref-for-enumdef-rtcprioritytype②">(3)</a> <a href="#ref-for-enumdef-rtcprioritytype③">(4)</a>
+    <li><a href="#ref-for-enumdef-rtcprioritytype④">4. Extensions for RTCDataChannel</a> <a href="#ref-for-enumdef-rtcprioritytype⑤">(2)</a>
+    <li><a href="#ref-for-enumdef-rtcprioritytype⑥">4.1. New RTCDataChannel attribute</a> <a href="#ref-for-enumdef-rtcprioritytype⑦">(2)</a>
+    <li><a href="#ref-for-enumdef-rtcprioritytype⑧">4.2. New RTCDataChannelInit member</a> <a href="#ref-for-enumdef-rtcprioritytype⑨">(2)</a>
+    <li><a href="#ref-for-enumdef-rtcprioritytype①⓪">4.3. RTCDataChannel processing steps</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-rtcprioritytype-very-low">
@@ -1973,13 +1965,7 @@ step into processing the <var>option</var> argument:</p>
   <aside class="dfn-panel" data-for="dom-rtcrtpencodingparameters-priority">
    <b><a href="#dom-rtcrtpencodingparameters-priority">#dom-rtcrtpencodingparameters-priority</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-rtcrtpencodingparameters-priority">3.2. Extension to RTCRtpEncodingParameters</a> <a href="#ref-for-dom-rtcrtpencodingparameters-priority①">(2)</a> <a href="#ref-for-dom-rtcrtpencodingparameters-priority②">(3)</a> <a href="#ref-for-dom-rtcrtpencodingparameters-priority③">(4)</a> <a href="#ref-for-dom-rtcrtpencodingparameters-priority④">(5)</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="dom-rtcrtpencodingparameters-localpriority">
-   <b><a href="#dom-rtcrtpencodingparameters-localpriority">#dom-rtcrtpencodingparameters-localpriority</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dom-rtcrtpencodingparameters-localpriority">3.2. Extension to RTCRtpEncodingParameters</a> <a href="#ref-for-dom-rtcrtpencodingparameters-localpriority①">(2)</a>
+    <li><a href="#ref-for-dom-rtcrtpencodingparameters-priority">3.2. Extension to RTCRtpEncodingParameters</a> <a href="#ref-for-dom-rtcrtpencodingparameters-priority①">(2)</a> <a href="#ref-for-dom-rtcrtpencodingparameters-priority②">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-rtcrtpencodingparameters-networkpriority">

@@ -92,7 +92,6 @@ that are.
 <pre class='idl'>
 partial dictionary RTCRtpEncodingParameters {
   RTCPriorityType priority;
-  RTCPriorityType localPriority;
   RTCPriorityType networkPriority;
 };
 </pre>
@@ -110,15 +109,6 @@ partial dictionary RTCRtpEncodingParameters {
   </dd>
 </dl>
 <div link-for-hint=RTCRtpEncodingParameters>
-<dfn dict-member for=RTCRtpEncodingParameters>localPriority</dfn> has the same
-effect as {{priority}}, except that it only affects the bandwidth allocation
-decisions for the generated packets, as described in [[RTCWEB-TRANSPORT]]
-section 4.1.
-
-If {{localPriority}} is unset, the DSCP markings of the generated
-packets are controlled by the {{priority}} member.
-
-
 <dfn dict-member for=RTCRtpEncodingParameters>networkPriority</dfn> has the same
 effect as {{priority}}, except that it only affects the DSCP markings of
 the generated packets, as described in [[RTCWEB-TRANSPORT]] section 4.2.
