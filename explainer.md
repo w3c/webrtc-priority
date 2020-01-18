@@ -1,12 +1,17 @@
 ## Explainer
 
-When people are trying to deploy priority for MediaStreamTracks per the [priority model](http://w3c.github.io/webrtc-pc/#priority-and-qos-model) in the spec, they want to experiment with the two parts of prioritization - [local prioritization](https://tools.ietf.org/html/draft-ietf-rtcweb-transports-17#section-4.1) and [QoS prioritization](https://tools.ietf.org/html/draft-ietf-rtcweb-transports-17#section-4.2) - independently.
+The WebRTC model defined in the IETF includes a priority function, consisting of [local prioritization](https://tools.ietf.org/html/draft-ietf-rtcweb-transports-17#section-4.1) and [QoS prioritization](https://tools.ietf.org/html/draft-ietf-rtcweb-transports-17#section-4.2).
 
-Adding independent controls to the core specification was [rejected at IETF 100](https://datatracker.ietf.org/meeting/100/materials/minutes-100-rtcweb/), but there seems nothing wrong with specifying an experimental extension to allow people to run trials with this functionality.
+This functionality was part of the [WEBRTC-PC](https://w3c.github.io/webrtc-pc/) specification until late 2019, at which time it was removed for lack of
+implementation as part of the preparation for getting WEBRTC-PC to Proposed Recommendation.
+
+Adding independent controls to the core specification was [rejected at IETF 100](https://datatracker.ietf.org/meeting/100/materials/minutes-100-rtcweb/), and this specification was started to give a home for documenting an experimental means of independent control.
+
+As the main spec removed priority, this document was updated to include the base priority definition.
 
 ### Examples
 
-With the standard API:
+Setting local priority and network priority at the same time:
 <pre>
 pc = new RTCPeerConnection();
 sender1 = pc.addTrack(track1);
@@ -20,7 +25,7 @@ This causes two effects:
 - if congestion occurs across both sender1 and sender2, sender1 will get to send more packets than sender2
 The assumption of the core spec is that this is the desired effect, but when experimenting, it can be hard to tell which of these two changes caused a change in performance as seen by the user.
 
-With the API proposed here:
+Setting network priority only:
 
 <pre>
 pc = new RTCPeerConnection();
@@ -33,7 +38,7 @@ sender1.encodingParameters.setParameters(parameters);
 
 This will only change the DSCP code points used with sender1, and will have no effect on local prioritization.
 
-Similarly:
+Setting local priority only:
 
 <pre>
 pc = new RTCPeerConnection();
