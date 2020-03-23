@@ -1,7 +1,8 @@
 <pre class='metadata'>
-Title: WebRTC DSCP Control API
+Title: WebRTC Priority Control API
+TR: https://www.w3.org/TR/webrtc-priority/
 Shortname: webrtc-priority
-Level: 1
+Level: None
 Status: ED
 Group: webrtc
 Repository: w3c/webrtc-priority
