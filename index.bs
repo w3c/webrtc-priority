@@ -92,14 +92,13 @@ that are.
 ## Extension to RTCRtpEncodingParameters ## {#encoding-parameters}
 <pre class='idl'>
 partial dictionary RTCRtpEncodingParameters {
-  RTCPriorityType priority;
+  RTCPriorityType priority = "low";
   RTCPriorityType networkPriority;
 };
 </pre>
 
 <dl>
-  <dt><dfn dict-member for=RTCRtpEncodingParameters><code>priority</code></dfn> of type {{RTCPriorityType}}, defaulting to
-    <code>"low"</code></dt>
+  <dt><dfn dict-member for=RTCRtpEncodingParameters><code>priority</code></dfn>
   <dd>
     <p>
       Indicates the priority of an {{RTCRtpSender}}, which influences the
@@ -108,15 +107,18 @@ partial dictionary RTCRtpEncodingParameters {
       between the encodings of an {{RTCRtpSender}}.
     </p>
   </dd>
-</dl>
-<div link-for-hint=RTCRtpEncodingParameters>
-<dfn dict-member for=RTCRtpEncodingParameters>networkPriority</dfn> has the same
-effect as {{priority}}, except that it only affects the DSCP markings of
-the generated packets, as described in [[RTCWEB-TRANSPORT]] section 4.2.
+  <dt>
+    <dfn dict-member for=RTCRtpEncodingParameters>networkPriority</dfn>
+  </dt>
+  <dd>
+  This has the same
+  effect as {{priority}}, except that it only affects the DSCP markings of
+  the generated packets, as described in [[RTCWEB-TRANSPORT]] section 4.2.
 
 If {{networkPriority}} is unset, the DSCP markings of the generated
 packets are controlled by the {{priority}} member.
-</div>
+</dd>
+</dl>
 
 
 # Extensions for RTCDataChannel # {#datachannel}
@@ -133,7 +135,7 @@ partial dictionary RTCDataChannelInit {
 </pre>
 ## New RTCDataChannel attribute
 <dl>
-  <dt><dfn for=RTCDataChannel attribute>priority</dfn> of type {{RTCPriorityType}}, readonly</dt>
+  <dt><dfn for=RTCDataChannel attribute>priority</dfn></dt>
   <dd>
     <p>The <code>priority</code> attribute returns the priority for
       this {{RTCDataChannel}}. The priority is assigned
@@ -144,8 +146,7 @@ partial dictionary RTCDataChannelInit {
 </dl>
 ## New RTCDataChannelInit member
 <dl>
-  <dt><dfn for=RTCDataChannelInit dict-member>priority</dfn> of type {{RTCPriorityType}}, defaulting to
-    <code>low</code></dt>
+  <dt><dfn for=RTCDataChannelInit dict-member>priority</dfn></dt>
    <dd>
      <p>Priority of this channel.</p>
    </dd>
