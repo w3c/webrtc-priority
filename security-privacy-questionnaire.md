@@ -75,7 +75,7 @@ It makes no such distinction.
 > 15. Does this specification have a "Security Considerations" and "Privacy
 >     Considerations" section?
 
-Not yet.
+Yes.
 
 > 16. Does this specification allow downgrading default security characteristics?
 
