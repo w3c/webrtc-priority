@@ -8,6 +8,8 @@ When the need for prioritization is visible inside the sending computer, this ca
 
 This specification gives a way to influence both local scheduling decisions and decisions in the network, by offering controls to indicate to the user agent what flows are more or less important to the user.
 
+By using this interface, the user can ensure that when resources are limited, the quality of the less important streams is lowered before the quality of the more important streams are, without needing any further interaction between the page and the browser.
+
 The resolution chosen (4 levels only) is deliberately coarse; experience in other fora has shown that a plethora of levels or a more complex priority model are rarely used effectively.
 
 ### History
