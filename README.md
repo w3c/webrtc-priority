@@ -4,3 +4,5 @@ This is the repository for the WebRTC priority control (formerly DSCP Control) A
 [contribute](CONTRIBUTING.md)!
 
 Read the [formatted version](https://w3c.github.io/webrtc-priority/) here!
+
+The specification is maintained using Bikeshed in index.bs
