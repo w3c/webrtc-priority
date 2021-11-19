@@ -2,9 +2,9 @@ name: Auto-publish
 on:
   pull_request: {}
   push:
-   paths:
+    paths:
       - index.bs
-   branches: [main]
+    branches: [main]
 
 jobs:
   main:
