@@ -12,6 +12,7 @@ Abstract: This API defines a control surface for manipulating the network
           control bits (DSCP bits) of outgoing WebRTC packets, and the
           queueing priority of outgoing WebRTC packets under congestion.
 Markup Shorthands: css no
+Implementation Report: https://wpt.fyi/results/webrtc-priority?label=experimental&label=master&aligned
 </pre>
 
 # Introduction # {#intro}
