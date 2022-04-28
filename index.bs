@@ -54,12 +54,14 @@ enum RTCPriorityType {
   "high"
 };
 </pre>
-<table data-link-for="RTCPriorityType" data-dfn-for="RTCPriorityType"
-class="simple">
-  <tbody>
+<table class="simple">
+  <caption><dfn enum>RTCPriorityType</dfn> Enumeration description</caption>
+  <thead>
     <tr>
-      <th colspan="2">Enumeration description</th>
+      <th>Enum value</th><th>Description></th>
     </tr>
+  </thead>
+  <tbody data-link-for="RTCPriorityType" data-dfn-for="RTCPriorityType">
     <tr>
       <td><dfn enum-value><code>very-low</code></dfn></td>
       <td>See [[!rfc8835]], Sections 4.1 and 4.2. Corresponds to "below
