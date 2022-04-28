@@ -113,11 +113,11 @@ partial dictionary RTCRtpEncodingParameters {
   </dt>
   <dd>
   This has the same
-  effect as {{priority}}, except that it only affects the DSCP markings of
+  effect as {{RTCRtpEncodingParameters/priority}}, except that it only affects the DSCP markings of
   the generated packets, as described in [[rfc8835]] section 4.2.
 
 If {{networkPriority}} is unset, the DSCP markings of the generated
-packets are controlled by the {{priority}} member.
+packets are controlled by the {{RTCRtpEncodingParameters/priority}} member.
 </dd>
 </dl>
 
