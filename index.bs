@@ -12,6 +12,7 @@ Abstract: This API defines a control surface for manipulating the network
           control bits (DSCP bits) of outgoing WebRTC packets, and the
           queueing priority of outgoing WebRTC packets under congestion.
 Markup Shorthands: css no
+Implementation Report: https://wpt.fyi/results/webrtc-priority?label=experimental&label=master&aligned
 </pre>
 
 # Introduction # {#intro}
@@ -54,12 +55,14 @@ enum RTCPriorityType {
   "high"
 };
 </pre>
-<table data-link-for="RTCPriorityType" data-dfn-for="RTCPriorityType"
-class="simple">
-  <tbody>
+<table class="simple">
+  <caption><dfn enum>RTCPriorityType</dfn> Enumeration description</caption>
+  <thead>
     <tr>
-      <th colspan="2">Enumeration description</th>
+      <th>Enum value</th><th>Description></th>
     </tr>
+  </thead>
+  <tbody data-link-for="RTCPriorityType" data-dfn-for="RTCPriorityType">
     <tr>
       <td><dfn enum-value><code>very-low</code></dfn></td>
       <td>See [[!rfc8835]], Sections 4.1 and 4.2. Corresponds to "below
@@ -111,11 +114,11 @@ partial dictionary RTCRtpEncodingParameters {
   </dt>
   <dd>
   This has the same
-  effect as {{priority}}, except that it only affects the DSCP markings of
+  effect as {{RTCRtpEncodingParameters/priority}}, except that it only affects the DSCP markings of
   the generated packets, as described in [[rfc8835]] section 4.2.
 
 If {{networkPriority}} is unset, the DSCP markings of the generated
-packets are controlled by the {{priority}} member.
+packets are controlled by the {{RTCRtpEncodingParameters/priority}} member.
 </dd>
 </dl>
 
